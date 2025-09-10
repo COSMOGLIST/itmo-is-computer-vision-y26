@@ -1,0 +1,14 @@
+rat=imread("rat2.jpg");
+rat_gray=rgb2gray(rat);
+subplot(4, 1, 1);
+imhist(rat(:,:,1));
+title('Цветное красный канал');
+subplot(4, 1, 2);
+imhist(rat(:,:,2));
+title('Цветное зеленый канал');
+subplot(4, 1, 3);
+imhist(rat(:,:,3));
+title('Цветное синий канал');
+subplot(4, 1, 4);
+imhist(rat_gray);
+title('grayscale');

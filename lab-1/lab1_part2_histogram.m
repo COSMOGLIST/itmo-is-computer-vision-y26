@@ -1,0 +1,21 @@
+image_low=imread("low_contrast.jpg");
+subplot(2, 3, 1);
+imhist(image_low(:,:,1));
+title('low contrast red');
+subplot(2, 3, 2);
+imhist(image_low(:,:,2));
+title('low contrast green');
+subplot(2, 3, 3);
+imhist(image_low(:,:,3));
+title('low contrast blue');
+
+image_high=imread("high_contrast.jpg");
+subplot(2, 3, 4);
+imhist(image_high(:,:,1));
+title('high contrast red');
+subplot(2, 3, 5);
+imhist(image_high(:,:,2));
+title('high contrast green');
+subplot(2, 3, 6);
+imhist(image_high(:,:,3));
+title('high contrast blue');

@@ -1,0 +1,86 @@
+rat=im2double(imread("rat1.jpg"));
+rat_red=rat(:,:,1);
+rat_green=rat(:,:,2);
+rat_blue=rat(:,:,3);
+c=1;
+g=0.4;
+rat_red_new_1=im2double(c.*rat_red.^g);
+rat_green_new_1=im2double(c.*rat_green.^g);
+rat_blue_new_1=im2double(c.*rat_blue.^g);
+c=1;
+g=1;
+rat_red_new_2=im2double(c.*rat_red.^g);
+rat_green_new_2=im2double(c.*rat_green.^g);
+rat_blue_new_2=im2double(c.*rat_blue.^g);
+c=1;
+g=2.5;
+rat_red_new_3=im2double(c.*rat_red.^g);
+rat_green_new_3=im2double(c.*rat_green.^g);
+rat_blue_new_3=im2double(c.*rat_blue.^g);
+
+rat_new_1=im2double(zeros(size(rat)));
+rat_new_1(:,:,1)=rat_red_new_1;
+rat_new_1(:,:,2)=rat_green_new_1;
+rat_new_1(:,:,3)=rat_blue_new_1;
+
+rat_new_2=im2double(zeros(size(rat)));
+rat_new_2(:,:,1)=rat_red_new_2;
+rat_new_2(:,:,2)=rat_green_new_2;
+rat_new_2(:,:,3)=rat_blue_new_2;
+
+rat_new_3=im2double(zeros(size(rat)));
+rat_new_3(:,:,1)=rat_red_new_3;
+rat_new_3(:,:,2)=rat_green_new_3;
+rat_new_3(:,:,3)=rat_blue_new_3;
+
+subplot(4, 4, 1);
+imshow(rat);
+title('original');
+subplot(4, 4, 2);
+imhist(rat(:,:,1));
+title('red');
+subplot(4, 4, 3);
+imhist(rat(:,:,2));
+title('green');
+subplot(4, 4, 4);
+imhist(rat(:,:,3));
+title('blue');
+
+subplot(4, 4, 5);
+imshow(rat_new_1);
+title('gamma=0.4');
+subplot(4, 4, 6);
+imhist(rat_new_1(:,:,1));
+title('red');
+subplot(4, 4, 7);
+imhist(rat_new_1(:,:,2));
+title('green');
+subplot(4, 4, 8);
+imhist(rat_new_1(:,:,3));
+title('blue');
+
+subplot(4, 4, 9);
+imshow(rat_new_2);
+title('gamma=1');
+subplot(4, 4, 10);
+imhist(rat_new_2(:,:,1));
+title('red');
+subplot(4, 4, 11);
+imhist(rat_new_2(:,:,2));
+title('green');
+subplot(4, 4, 12);
+imhist(rat_new_2(:,:,3));
+title('blue');
+
+subplot(4, 4, 13);
+imshow(rat_new_3);
+title('gamma=2.5');
+subplot(4, 4, 14);
+imhist(rat_new_3(:,:,1));
+title('red');
+subplot(4, 4, 15);
+imhist(rat_new_3(:,:,2));
+title('green');
+subplot(4, 4, 16);
+imhist(rat_new_3(:,:,3));
+title('blue');
